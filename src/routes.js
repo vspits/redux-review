@@ -10,7 +10,7 @@ export default (
             <Nav />
             <div>
                 <Route exact path="/" component={PageOne}/>
-                <Route path="/pagetwo" component={PageTwo}/>
+                <Route path="/pagetwo/:id" component={PageTwo}/>
                 <Route path="/pagethree" component={PageThree}/>
             </div>
         </div>

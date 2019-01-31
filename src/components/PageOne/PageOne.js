@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import './pageone.css'
 import { updateInformation, deleteInformation } from '../../ducks/reducer'
 
+
 // new branch
 class PageOne extends Component {
 
@@ -29,6 +30,7 @@ updateInfo() {
 }
 
 render() {
+
         return (
            <div className="page" id="page-one-wrapper">
             Name: <input value={this.state.name} type="text" onChange={(e) => this.handleChange("name", e.target.value)}/>

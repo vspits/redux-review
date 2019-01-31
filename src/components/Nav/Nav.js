@@ -6,7 +6,7 @@ const Nav = () => {
     return (
         <nav>
             <Link to="/">Page One</Link>
-            <Link to="/pagetwo">Page Two</Link>
+            <Link to="/pagetwo/2">Page Two</Link>
             <Link to="/pagethree">Page Three</Link>
         </nav>
     )

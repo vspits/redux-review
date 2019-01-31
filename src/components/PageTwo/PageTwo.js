@@ -2,6 +2,7 @@ import React from 'react'
 import './pagetwo.css'
 import { connect } from 'react-redux'
 import { deleteInformation, addCard } from '../../ducks/reducer'
+import sb from '../../assets/sb.gif'
 
 
 const PageTwo = (props) => {
@@ -12,6 +13,10 @@ const PageTwo = (props) => {
         email,
         phoneNumber
     }
+    let pictures = [];
+        for (let i = 0; i < props.match.params.id; i++) {
+            pictures.push(<img src={sb} alt="sb" />);
+        }
     return (
         <div className="page" id="page-two-wrapper">
         <p>Your Information: </p>
@@ -21,6 +26,7 @@ const PageTwo = (props) => {
         <p>Phone Number: {props.phoneNumber}</p>
         <button onClick={() => props.addCard(newObj)}>Confirm</button>
         <button onClick={() => props.deleteInformation()}>Reset</button>
+        {pictures}
         </div>
     )
 }
