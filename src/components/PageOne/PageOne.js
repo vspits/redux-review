@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import './pageone.css'
 import { updateInformation, deleteInformation } from '../../ducks/reducer'
 
-
+// new branch
 class PageOne extends Component {
 
 constructor() {
