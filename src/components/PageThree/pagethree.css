@@ -1,0 +1,9 @@
+#page-three-wrapper {
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: row;
+}
+.card-item {
+ border: 1px solid black;
+ margin: 10px;
+}

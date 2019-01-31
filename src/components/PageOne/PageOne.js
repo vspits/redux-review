@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import './pageone.css'
-import { updateInformation } from '../../ducks/reducer'
+import { updateInformation, deleteInformation } from '../../ducks/reducer'
 
 
 class PageOne extends Component {
@@ -20,9 +20,12 @@ handleChange(field, value) {
     this.setState({ [`${field}`]: value})
 }
 
-updateInfo() {
-    this.props.updateInformation(this.state);
+resetState() {
     this.setState({ name: '', age: '', email: '', phoneNumber: ''});
+}
+updateInfo() {
+    this.resetState();
+    this.props.updateInformation(this.state);
 }
 
 render() {
@@ -39,7 +42,8 @@ render() {
 }
 
 let mapDispatchtoProps = {
-    updateInformation
+    updateInformation,
+    deleteInformation
 }
 
 export default connect(null, mapDispatchtoProps)(PageOne)

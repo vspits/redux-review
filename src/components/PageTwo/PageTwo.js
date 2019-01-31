@@ -1,26 +1,41 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './pagetwo.css'
 import { connect } from 'react-redux'
+import { deleteInformation, addCard } from '../../ducks/reducer'
 
 
-class PageTwo extends Component {
-render() {
-        return (
-           <div className="page" id="page-two-wrapper">
-            <p>Your Information: </p>
-            <p>Name: {this.props.name}</p>
-            <p>Age: {this.props.age}</p>
-            <p>Email: {this.props.email}</p>
-            <p>Phone Number: {this.props.phoneNumber}</p>
-            <button>Confirm</button>
-           </div>
-        )
+const PageTwo = (props) => {
+    let { name, age, email, phoneNumber } = props;
+    let newObj = {
+        name,
+        age,
+        email,
+        phoneNumber
     }
+    return (
+        <div className="page" id="page-two-wrapper">
+        <p>Your Information: </p>
+        <p>Name: {props.name}</p>
+        <p>Age: {props.age}</p>
+        <p>Email: {props.email}</p>
+        <p>Phone Number: {props.phoneNumber}</p>
+        <button onClick={() => props.addCard(newObj)}>Confirm</button>
+        <button onClick={() => props.deleteInformation()}>Reset</button>
+        </div>
+    )
 }
+
 function mapStateToProps(reduxState) {
     let { name, age, email, phoneNumber } = reduxState;
     return {
-        name, age, email, phoneNumber
+        name, 
+        age, 
+        email, 
+        phoneNumber
     }
 }
-export default connect(mapStateToProps)(PageTwo)
+const mapDispatchToProps = {
+    deleteInformation,
+    addCard
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PageTwo)
