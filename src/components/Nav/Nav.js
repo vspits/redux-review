@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './nav.css'
 
 const Nav = () => {
     return (
         <nav>
-            <p>Page One</p>
-            <p>Page Two</p>
-            <p>Page Three</p>
+            <Link to="/">Page One</Link>
+            <Link to="/pagetwo">Page Two</Link>
+            <Link to="/pagethree">Page Three</Link>
         </nav>
     )
 }
